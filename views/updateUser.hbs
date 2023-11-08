@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+	        background-color: #f2f2f2;
+	        font-family: Arial, sans-serif;
+        }
+        .signup-box {
+	        background-color: #fff;
+	        border-radius: 5px;
+	        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	        margin: auto;
+	        margin-top: 100px;
+	        padding: 20px;
+	        max-width: 400px;
+        }
+
+        .signup-box h2 {
+	        text-align: center;
+	        margin-bottom: 20px;
+        }
+
+        .signup-box label {
+	        display: block;
+	        margin-bottom: 5px;
+        }
+
+        .signup-box input[type="text"],
+        .signup-box input[type="email"],
+        .signup-box input[type="password"],
+        .signup-box input[type="submit"]{
+	        width: 93%;
+	        padding: 10px;
+	        border: 1px solid #ccc;
+	        border-radius: 5px;
+	        margin-bottom: 20px;
+        }
+
+        .signup-box input[type="submit"] {
+            width: 99%;
+	        background-color: #494949;
+	        color: #fff;
+	        font-size: 16px;
+	        cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+	<div class="signup-box">
+		<h2>Update</h2>
+		<form action="/admin/update" method="post">
+			<label for="fullname">Name</label>
+			<input type="text" id="fullname" name="name" value="{{userdata.name}}" >
+
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" value="{{userdata.email}}" >
+		
+            {{!-- <label for="gender">Gender</label>
+			<input type="text" id="gender" name="gender" value="{{userdata.gender}}" > --}}
+
+            <input type="hidden"  name="id" value="{{userdata._id}}">
+
+			<input type="submit" value="Update">
+		</form>
+	</div>
+</body>
+</html>
